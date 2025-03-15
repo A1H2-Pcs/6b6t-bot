@@ -29,6 +29,7 @@ process.on('uncaughtException', e => {
 // Logging setup
 const logFilePath = "./bot_log.txt";
 const coordsLogFilePath = "./player_coords.txt"; // New log file for player coordinates
+const botCoordsLogFilePath = "./bot_coords.txt"; // New log file for bot's coordinates
 
 const logMessageToFile = (message) => {
   const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
@@ -42,6 +43,20 @@ const logPlayerCoords = (username, coords) => {
     `${timestamp}: Player: ${username}, Coords: X=${coords.x.toFixed(2)}, Y=${coords.y.toFixed(2)}, Z=${coords.z.toFixed(2)}\n`, 
     "utf-8");
 };
+
+// New function to log bot's coordinates
+const logBotCoords = () => {
+  if (bot && bot.entity) {
+    const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
+    const coords = bot.entity.position;
+    fs.appendFileSync(botCoordsLogFilePath, 
+      `${timestamp}: Bot Coords: X=${coords.x.toFixed(2)}, Y=${coords.y.toFixed(2)}, Z=${coords.z.toFixed(2)}\n`, 
+      "utf-8");
+  }
+};
+
+// Set interval to log bot's coordinates every 10 seconds
+setInterval(logBotCoords, 10000);
 
 // Kit configuration
 const kitConfig = {
