@@ -60,17 +60,32 @@ setInterval(logBotCoords, 10000);
 
 // Kit configuration
 const kitConfig = {
-  "starter": { 
-    coords: { x: 5090, y: -59, z: 132 }
+  "Gapples": { 
+    coords: { x: -603985, y: 306, z: -462611 }
   },
   "pvp": { 
-    coords: { x: 5083.656, y: -61.00000, z: 146.300 }
+    coords: { x: -603983, y: 306, z: -462613 }
   },
   "cpvp": { 
-    coords: { x: 5083.656, y: -61.00000, z: 146.300 }
+    coords: { x: -603983, y: 306, z: -462613 }
   },
   "totem": { 
-    coords: { x: 5093, y: -59, z: 136 }
+    coords: { x: -603982, y: 306, z: -462611 }
+  },
+  "redstone": { 
+    coords: { x: -603980, y: 306, z: -462613 }
+  },
+  "SlokoSloppy": { 
+    coords: { x: -603979, y: 306, z: -462611 }
+  },
+  "Shulker": { 
+    coords: { x: -603977, y: 306, z: -462613 }
+  },
+  "Crystal": { 
+    coords: { x: -603976, y: 306, z: -462611 }
+  },
+  "Dye": { 
+    coords: { x: -603974, y: 306, z: -462613 }
   }
 };
 
